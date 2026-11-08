@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="Личный проект спальни: четыре планировки, интерактивная объёмная модель, вид сверху, материалы и подборка мебели в Великобритании.">
+  <title>Тише. — ваша спальня, по-новому</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css?v=audit-20261108">
+  <script defer src="assets/vendor/three.min.js"></script>
+  <script defer src="mirrors.js?v=door-mirrors-1"></script>
+  <script defer src="scene.js?v=door-mirrors-1"></script>
+  <script defer src="i18n.js?v=audit-20261108"></script>
+  <script defer src="catalog.js?v=gallery-6"></script>
+  <script defer src="palettes.js?v=gallery-6"></script>
+  <script defer src="plan.js?v=gallery-6"></script>
+  <script defer src="gallery.js?v=audit-20261108"></script>
+  <script defer src="app.js?v=audit-20261108"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">К содержимому</a>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+    <symbol id="i-plan" viewBox="0 0 24 24"><path d="M3 3h18v18h-8v-5H3V3Zm5 0v7m5 6v-6h8"/></symbol>
+    <symbol id="i-cube" viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7l9-5Zm0 10L3 7m9 5 9-5m-9 5v10"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 1v2m0 18v2M1 12h2m18 0h2M4.2 4.2l1.4 1.4m12.8 12.8 1.4 1.4M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 14.5A9.5 9.5 0 0 1 9.5 3 9.5 9.5 0 1 0 21 14.5Z"/></symbol>
+    <symbol id="i-reset" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  </svg>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Тише — в начало"><span class="brand-mark" aria-hidden="true"></span>тише<span class="brand-dot">.</span></a>
+    <span class="header-caption">ЛИЧНЫЙ ИНТЕРЬЕРНЫЙ ПРОЕКТ</span>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg></button>
+    <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
+      <a href="#idea">Идея</a><a href="#room">Планировка</a><a href="#materials">Материалы</a><a href="#shopping">Покупки</a>
+    </nav>
+    <div class="language-switch" role="group" aria-label="Язык страницы"><button type="button" data-language="en" lang="en" aria-pressed="false" aria-label="English">EN</button><button type="button" data-language="ru" lang="ru" aria-pressed="true" aria-label="Русский">RU</button></div>
+    <button class="button button-outline header-save" type="button" data-print>Сохранить PDF <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-down"/></svg></button>
+  </header>
+
+  <main id="main">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="tiny-star" aria-hidden="true">✳</span> HOTEL AT HOME · ВЕЛИКОБРИТАНИЯ</p>
+        <h1 id="hero-title">Место, <br>где можно<br><em>выдохнуть.</em></h1>
+        <p class="hero-description">Ваша спальня — с ощущением хорошего отеля.<br class="desktop-break"> С учётом вашей комнаты. С вниманием к мелочам.</p>
+        <a class="button button-dark" href="#room">Заглянуть внутрь <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
+        <div class="hero-facts" aria-label="Параметры комнаты">
+          <div><strong>≈12,3 <small>м²</small></strong><span>необычной формы</span></div>
+          <div><strong>2,42 <small>м</small></strong><span>высота потолка</span></div>
+          <div><strong>4</strong><span>варианта планировки</span></div>
+        </div>
+      </div>
+      <figure class="hero-figure hero-plan">
+        <button class="hero-image-wrap" type="button" data-reference="plan" aria-label="Рассмотреть исходный план комнаты"><img src="image/Bedroom.png" alt="Ваш исходный план комнаты с размерами" width="2400" height="1620" fetchpriority="high"></button>
+        <figcaption><span>ВАША КОМНАТА / ИСХОДНЫЙ ПЛАН</span><span>Размеры и форма помещения</span></figcaption>
+      </figure>
+    </section>
+
+    <div class="project-strip container"><span><i></i> Кровать уже есть — проектируем вокруг неё</span><button class="text-button" type="button" data-reference="plan">Посмотреть ваш исходный план <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></button><span class="strip-note">КОНЦЕПЦИЯ / ПЕРВЫЙ ВЗГЛЯД</span></div>
+
+    <section class="section container" id="idea" aria-labelledby="idea-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / ЗАМЫСЕЛ</p><h2 id="idea-title">Не больше вещей.<br><em>Больше ощущения дома.</em></h2></div><p class="section-intro">Нестандартная форма — повод найти красивое решение. Оставляем воздух у окон, используем нишу для хранения и собираем интерьер вокруг вашей кровати.</p></div>
+      <div class="idea-grid">
+        <figure class="owned-bed"><span class="small-label">ОТПРАВНАЯ ТОЧКА · УЖЕ КУПЛЕНА</span><button class="reference-image-button" type="button" data-reference="bed" aria-label="Рассмотреть фотографию вашей кровати"><img src="image/alteahotelstyle_kb_alteagrey_grey_view1.jpg" alt="Ваша серая кровать с подъёмным основанием и широким изголовьем" width="901" height="572" loading="lazy"><span aria-hidden="true">↗</span></button><figcaption>Ваша кровать, главный герой.<span>Мягкое изголовье, встроенные полочки и свет.</span></figcaption></figure>
+        <div class="idea-notes"><article><span class="idea-index">01</span><div><h3>Тактильно, а не вычурно</h3><p>Матовые стены, дерево и многослойный текстиль создают ощущение отеля без лишнего декора.</p></div></article><article><span class="idea-index">02</span><div><h3>Ниша работает на вас</h3><p>Шкаф-купе в узкой части комнаты. Раздвижные двери не требуют места для распахивания перед креслом или столиком.</p></div></article><article><span class="idea-index">03</span><div><h3>Уют включается светом</h3><p>Дневной свет двух окон, мягкий общий свет и отдельное освещение для чтения у кровати.</p></div></article></div>
+      </div>
+    </section>
+
+    <section class="room-section" id="room" aria-labelledby="room-title">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow">02 / ПРОСТРАНСТВО</p><h2 id="room-title">Всё встаёт<br><em>на свои места.</em></h2></div><div class="room-intro"><p>Попробуйте четыре сценария жизни в одной комнате.<br>Вид сверху покажет расстановку понятнее всего.</p><button class="text-button" type="button" data-reference="plan">Свериться с исходным планом <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></button></div></div>
+
+        <div class="room-palette-panel" aria-labelledby="room-palette-title"><div class="palette-panel-heading"><h3 id="room-palette-title">Цвета комнаты</h3><span id="palette-short-name">Тёплый лён</span></div><div class="palette-choices" role="group" aria-label="Палитра модели"><button type="button" data-palette="linen" aria-pressed="true"><span class="palette-choice-dot palette-linen" aria-hidden="true"></span><span>Тёплый лён</span></button><button type="button" data-palette="sage" aria-pressed="false"><span class="palette-choice-dot palette-sage" aria-hidden="true"></span><span>Мягкий шалфей</span></button><button type="button" data-palette="taupe" aria-pressed="false"><span class="palette-choice-dot palette-taupe" aria-hidden="true"></span><span>Глубокий тауп</span></button><button type="button" data-palette="stone" aria-pressed="false"><span class="palette-choice-dot palette-stone" aria-hidden="true"></span><span>Камень и дуб</span></button><button type="button" data-palette="cappuccino" aria-pressed="false"><span class="palette-choice-dot palette-cappuccino" aria-hidden="true"></span><span>Капучино</span></button><button type="button" data-palette="emerald" aria-pressed="false"><span class="palette-choice-dot palette-emerald" aria-hidden="true"></span><span>Изумруд и латунь</span></button></div><dl class="room-hex-list" id="room-hex-list" aria-label="Цвета выбранной палитры в HEX"></dl></div>
+        <div class="workbench">
+          <div class="viewer">
+            <div class="viewer-toolbar"><span class="viewer-label"><i></i> ВАША КОМНАТА</span><div class="segmented" role="group" aria-label="Отображение комнаты"><button type="button" data-mode="3d" aria-pressed="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-cube"/></svg>Объём</button><button type="button" data-mode="plan" aria-pressed="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-plan"/></svg>Вид сверху</button></div></div>
+            <div class="room-stage" id="room-stage">
+              <div class="scene-host" id="scene-host" aria-label="Интерактивная объёмная модель спальни"></div>
+              <div class="plan-host" id="plan-host"></div>
+              <div class="stage-caption"><span id="stage-hint">Объёмная схема · запуск 3D…</span><div class="stage-tools"><div class="zoom-tools" role="group" aria-label="Масштаб объёмной модели"><button type="button" id="zoom-out" aria-label="Отдалить модель">−</button><output id="zoom-level" aria-label="Текущий масштаб">100%</output><button type="button" id="zoom-in" aria-label="Приблизить модель">+</button></div><button type="button" id="reset-camera" class="icon-button" aria-label="Вернуть исходный ракурс"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-reset"/></svg></button></div></div>
+            </div>
+            <div class="camera-bar" role="group" aria-label="Ракурс объёмной модели"><span>РАКУРС</span><button type="button" data-camera="overview" aria-pressed="true">Общий</button><button type="button" data-camera="entrance" aria-pressed="false">От двери</button><button type="button" data-camera="window" aria-pressed="false">У окон</button><button type="button" data-camera="top" aria-pressed="false">Сверху</button></div>
+            <div class="plan-legend"><span><i class="legend-bed"></i>Кровать</span><span><i class="legend-storage"></i>Хранение</span><span><i class="legend-window"></i>Окна</span><span><i class="legend-door"></i>Дверь</span></div>
+            <p class="selection-summary" id="selection-summary"></p>
+          </div>
+          <aside class="room-controls" aria-label="Настройки планировки">
+            <fieldset class="layout-fieldset"><legend>Как вам удобнее?</legend><p class="control-description">Четыре идеи вокруг вашей кровати.</p>
+              <label class="layout-option"><input type="radio" name="layout" value="calm" checked><span class="layout-number">A</span><span><strong>Тихий отель</strong><small>Симметрия и свободное пространство</small></span><span class="option-check" aria-hidden="true">✓</span></label>
+              <label class="layout-option"><input type="radio" name="layout" value="work"><span class="layout-number">B</span><span><strong>Место для себя</strong><small>Компактный стол у второго окна</small></span><span class="option-check" aria-hidden="true">✓</span></label>
+              <label class="layout-option"><input type="radio" name="layout" value="read"><span class="layout-number">C</span><span><strong>Медленное утро</strong><small>Кресло и уголок для чтения</small></span><span class="option-check" aria-hidden="true">✓</span></label>
+              <label class="layout-option"><input type="radio" name="layout" value="vanity"><span class="layout-number">D</span><span><strong>Личный ритуал</strong><small>Туалетный столик и мягкая банкетка</small></span><span class="option-check" aria-hidden="true">✓</span></label>
+            </fieldset>
+            <div class="layout-comment"><span class="small-label" id="layout-kicker">СЦЕНАРИЙ A</span><p id="layout-description">Кровать по центру короткой стены. Шкаф-купе 100 × 55 см в нижней нише. Ковёр сдвинут к изголовью; у изножья остаётся деревянный пол.</p><button class="text-button layout-reference" id="layout-reference" type="button">Посмотреть с четырёх сторон <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></button></div>
+            <fieldset class="door-fieldset"><legend>Входная дверь</legend><label class="door-checkbox"><input type="checkbox" id="door-visible" name="door-visible" checked><span>Показывать дверь</span></label><button class="door-toggle" id="door-toggle" type="button" aria-pressed="false">Открыть дверь</button><p id="door-status" role="status">Дверь закрыта</p></fieldset>
+            <fieldset class="fixture-fieldset"><legend>Потолочный свет</legend><div class="fixture-switch" role="group" aria-label="Направление потолочного плафона"><button type="button" data-fixture="up" aria-pressed="true">Плафон вверх</button><button type="button" data-fixture="down" aria-pressed="false">Плафон вниз</button></div></fieldset>
+            <fieldset class="light-fieldset"><legend>Время для уюта</legend><div class="light-switch" role="group" aria-label="Освещение модели"><button type="button" data-light="day" aria-pressed="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg>День</button><button type="button" data-light="evening" aria-pressed="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg>Вечер</button></div></fieldset>
+            <fieldset class="exposure-fieldset"><legend>Куда выходят окна?</legend><div class="exposure-switch" role="group" aria-label="Направление окон"><button type="button" data-exposure="unknown" aria-pressed="true">Неизвестно</button><button type="button" data-exposure="north" aria-pressed="false">Север</button><button type="button" data-exposure="south" aria-pressed="false">Юг</button></div><p id="exposure-hint"></p><small>Условное сравнение света, без расчёта положения солнца. На реальный свет влияют сезон, время суток и соседние здания.</small></fieldset>
+
+          </aside>
+        </div>
+        <div class="model-footer"><p class="model-note"><span>ЭСКИЗ, НЕ РАБОЧИЙ ЧЕРТЁЖ</span> Форма и окна перенесены с вашего плана. Матрас в модели условно 160 × 200 см, изголовье — 270 см: точные размеры кровати ещё нужны. Дуга двери показывает только один из возможных вариантов открывания.</p><button class="text-button" type="button" id="download-plan">Скачать вид сверху <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-down"/></svg></button></div>
+        <noscript><p>Для переключения планировок и объёмной модели включите JavaScript. Исходный план можно открыть в папке image.</p></noscript>
+      </div>
+    </section>
+
+    <section class="section container" id="materials" aria-labelledby="materials-title">
+      <div class="section-heading"><div><p class="eyebrow">03 / ОЩУЩЕНИЯ</p><h2 id="materials-title">Цвет, к которому<br><em>хочется прикоснуться.</em></h2></div><p class="section-intro">Шесть палитр, включая три по вашим фотографиям. В A, B, C и D сохраняется одна и та же купленная серая кровать — меняется её окружение.</p></div>
+      <div class="palette-cards" role="group" aria-label="Выбор палитры спальни">
+        <button class="palette-card" type="button" data-palette="linen" aria-pressed="true"><span class="palette-preview linen-preview"><span class="material-arch"></span><span class="material-fabric"></span><span class="material-wood"></span><span class="palette-selected" aria-hidden="true">✓</span></span><span class="palette-card-label"><span><strong>Тёплый лён</strong><small>Молочный · натуральный дуб · олива</small></span><span>01</span></span></button>
+        <button class="palette-card" type="button" data-palette="sage" aria-pressed="false"><span class="palette-preview sage-preview"><span class="material-arch"></span><span class="material-fabric"></span><span class="material-wood"></span><span class="palette-selected" aria-hidden="true">✓</span></span><span class="palette-card-label"><span><strong>Мягкий шалфей</strong><small>Серо-зелёный · светлый дуб · сливочный</small></span><span>02</span></span></button>
+        <button class="palette-card" type="button" data-palette="taupe" aria-pressed="false"><span class="palette-preview taupe-preview"><span class="material-arch"></span><span class="material-fabric"></span><span class="material-wood"></span><span class="palette-selected" aria-hidden="true">✓</span></span><span class="palette-card-label"><span><strong>Глубокий тауп</strong><small>Грибной · тёмное дерево · песочный</small></span><span>03</span></span></button>
+
+        <button class="palette-card" type="button" data-palette="stone" aria-pressed="false"><span class="palette-preview stone-preview"><span class="material-arch"></span><span class="material-fabric"></span><span class="material-wood"></span><span class="palette-selected" aria-hidden="true">✓</span></span><span class="palette-card-label"><span><strong>Камень и дуб</strong><small>Тёплый камень · медовый дуб · лён</small></span><span>04</span></span></button>
+        <button class="palette-card" type="button" data-palette="cappuccino" aria-pressed="false"><span class="palette-preview cappuccino-preview"><span class="material-arch"></span><span class="material-fabric"></span><span class="material-wood"></span><span class="palette-selected" aria-hidden="true">✓</span></span><span class="palette-card-label"><span><strong>Капучино</strong><small>Сливочный · капучино · мягкий тауп</small></span><span>05</span></span></button>
+        <button class="palette-card" type="button" data-palette="emerald" aria-pressed="false"><span class="palette-preview emerald-preview"><span class="material-arch"></span><span class="material-fabric"></span><span class="material-wood"></span><span class="palette-selected" aria-hidden="true">✓</span></span><span class="palette-card-label"><span><strong>Изумруд и латунь</strong><small>Глубокий зелёный · светлый текстиль · латунь</small></span><span>06</span></span></button>
+      </div>
+      <div class="material-caption"><p>Матовая краска на стенах, дерево под ногами, плотные шторы от потолка и мягкий ковёр у кровати. Цветовые сочетания концептуальные — оттенок краски выбирается по образцу в комнате.</p><a class="text-button" href="#room">Посмотреть выбранную палитру в комнате <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a></div>
+      <div class="lighting-guide"><div><p class="eyebrow">ТРИ СЛОЯ СВЕТА</p><h3>Уют не должен<br>заканчиваться <em>на закате.</em></h3></div><ol><li><span>01</span><div><strong>Естественный</strong><p>Два окна остаются открытыми для света. Шторы смягчают его и собирают стену в единое целое.</p></div></li><li><span>02</span><div><strong>Мягкий общий</strong><p>Плафон Cossington направлен вверх: свет отражается от потолка. Высота 25 см подходит для низкого потолка; ориентир для лампочек — тёплый свет 2700 K.</p></div></li><li><span>03</span><div><strong>Личный вечерний</strong><p>Встроенные светильники кровати для чтения; отдельный торшер — для кресла.</p></div></li></ol></div>
+      <section class="finish-directory" id="finish-shops" aria-labelledby="finish-shops-title">
+        <div class="gallery-heading"><h3 id="finish-shops-title">Где искать <em>отделку и детали.</em></h3><p>Британские магазины и готовые материалы.<br>Количество и стоимость ремонта пока не рассчитаны.</p></div>
+        <div class="finish-grid">
+          <article><span class="small-label">01 / СТЕНЫ И ПОТОЛОК</span><h4>Brewers Decorator Centres</h4><p>Краски Dulux Trade, Crown, Albany и другие марки. Для потолка — матовая краска для стен и потолков; оттенок стен выбираем по физическому образцу.</p><a href="https://www.brewers.co.uk/products/paints/paint-for-walls-ceilings" target="_blank" rel="noopener noreferrer">Краски для стен и потолков ↗</a></article>
+          <article><span class="small-label">02 / ФАКТУРА</span><h4>Impera Italia</h4><p>Декоративная штукатурка, включая известковую Marmorino. Покупной материал готовой линейки; грунт и способ нанесения зависят от основания.</p><a href="https://www.imperaitalia.com/collections/plasters" target="_blank" rel="noopener noreferrer">Декоративная штукатурка ↗</a></article>
+          <article><span class="small-label">03 / ИЗВЕСТКОВАЯ ОТДЕЛКА</span><h4>Impera Italia · Limewash</h4><p>Limewash — известковая краска с живой неоднородной фактурой. Это отдельный декоративный вариант; для обычного белого потолка предлагаем матовую краску.</p><a href="https://www.imperaitalia.com/products/lime-eco-paint" target="_blank" rel="noopener noreferrer">Известковая краска ↗</a></article>
+          <article><span class="small-label">04 / ЛЕПНИНА</span><h4>Wickes</h4><p>Готовые карнизы и потолочные профили coving: гипсовые и облегчённые варианты. Для потолка 242 см начнём с небольшого спокойного профиля.</p><a href="https://www.wickes.co.uk/Products/Building-Materials/Plaster%2BPlasterboard/Coving/c/1000221" target="_blank" rel="noopener noreferrer">Карнизы и потолочные профили ↗</a></article>
+          <article><span class="small-label">05 / ОБОИ</span><h4>Brewers Decorator Centres</h4><p>Обои и образцы для сравнения при разном свете. Рисунок, число рулонов и клей выбираем после уточнения стен и раппорта.</p><a href="https://www.brewers.co.uk/brands/albany-wallpaper" target="_blank" rel="noopener noreferrer">Обои ↗</a></article>
+          <article><span class="small-label">06 / ЭЛЕКТРИКА</span><h4>TLC Direct · MK Logic Plus</h4><p>Пример британской двойной розетки 13A с выключателями. Розетки, подрозетники, выключатели и кабель подбирает электрик под существующую проводку.</p><a href="https://www.tlc-direct.co.uk/Products/MKK2747.html" target="_blank" rel="noopener noreferrer">Розетка MK Logic Plus ↗</a></article>
+        </div>
+      </section>
+</section>
+
+    <section class="shopping-section section" id="shopping" aria-labelledby="shopping-title"><div class="container">
+      <div class="section-heading"><div><p class="eyebrow">04 / ОТ ИДЕИ К ПОКУПКЕ</p><h2 id="shopping-title">Красиво.<br><em>И можно найти в UK.</em></h2></div><p class="section-intro">Готовые предметы из британских магазинов: размеры, ссылки и стоимость. Отметьте нужное и выберите Cream или Latte — две пары штор на два окна.</p></div>
+      <div class="shopping-layout"><div class="shopping-main"><div class="shopping-filter" role="group" aria-label="Фильтр покупок"><button type="button" data-filter="all" aria-pressed="true">Всё</button><button type="button" data-filter="furniture" aria-pressed="false">Мебель</button><button type="button" data-filter="textile" aria-pressed="false">Текстиль</button><button type="button" data-filter="light" aria-pressed="false">Свет</button><button type="button" data-filter="materials" aria-pressed="false">Отделка</button></div><div id="product-list" class="product-list"></div><section class="shopping-info" aria-labelledby="shopping-info-title">
+  <h3 id="shopping-info-title">Перед покупкой</h3>
+  <p class="price-note">Цены проверены 6 ноября 2026 года по страницам магазинов и могут измениться. Наличие и доставка зависят от адреса. Шкаф 100 см в нише 105 см требует проверки плинтусов и места для сборки.</p>
+  <div class="shopping-compare">
+    <h4 id="shopping-compare-title">Ещё сравнить:</h4>
+    <div class="extra-source" role="group" aria-labelledby="shopping-compare-title"><a href="https://www.argos.co.uk/product/hc6hsg20" target="_blank" rel="noopener noreferrer">Шторы Sundour Eclipse · Argos ↗</a>
+<a href="https://www.wayfair.co.uk/furniture/sb1/beige-armchairs-accent-chairs-c493383-a75218~274801.html" target="_blank" rel="noopener noreferrer">Кресла · Wayfair UK ↗</a></div>
+    <p class="comparison-note">Эти альтернативы не включены в сумму.</p>
+  </div>
+</section></div>
+      <aside class="budget-card"><span class="eyebrow">ВАШ СПИСОК</span><p class="budget-total" id="budget-total">£636.69</p><p class="budget-count" id="budget-count">7 выбранных позиций</p><div class="budget-divider"></div><p>Подтверждённая часть стоимости.<br>Без доставки, сборки, лампочек, крючков, подложки, столика D и ремонта.</p><button class="button button-dark" type="button" id="download-list">Скачать список CSV <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-down"/></svg></button><span class="budget-footnote">Откроется в Excel или Numbers</span></aside></div>
+    </div></section>
+
+    <section class="section container finishing" id="details" aria-labelledby="details-title"><div><p class="eyebrow">05 / ПОСЛЕДНИЕ ШТРИХИ</p><h2 id="details-title">Хороший проект<br><em>начинается с деталей.</em></h2><p>Прежде чем выбирать окончательную расстановку, дополним то, чего пока нет в исходных материалах.</p><div class="project-checklist"><label><input type="checkbox" data-check="bed" name="check-bed">Точные размеры кровати и широкого изголовья</label><label><input type="checkbox" data-check="door" name="check-door">Направление открывания двери и высота подоконников</label><label><input type="checkbox" data-check="utilities" name="check-utilities">Радиаторы, розетки и выключатели</label><label><input type="checkbox" data-check="niche" name="check-niche">Ширина верха и нижнего выступа — контрольный обмер</label></div><details><summary>Что показывает модель?</summary><p>Интерактивная модель и план сверху показывают условную расстановку по предоставленной схеме. Это первая концепция, которую можно корректировать после уточнения размеров; не готовая строительная документация.</p></details></div><div class="notes-panel"><span class="handwritten">Оставим место для ваших идей.</span><label for="project-notes">Что хочется добавить или изменить?</label><textarea id="project-notes" name="project-notes" autocomplete="off" rows="5" placeholder="Например: хочу больше закрытого хранения и светлее стены…" maxlength="4000"></textarea><p class="save-status" id="save-status" role="status">Выбор и заметки сохраняются только в этом браузере.</p><button class="button button-dark" type="button" data-print>Сохранить проект в PDF <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-down"/></svg></button><p class="print-note">Откроется окно печати. В нём выберите «Сохранить как PDF».</p></div></section>
+  </main>
+
+  <footer class="site-footer container"><a class="brand" href="#"><span class="brand-mark" aria-hidden="true"></span>тише<span class="brand-dot">.</span></a><p>Меньше суеты. Больше вашего.</p><a class="text-button" href="#">Вернуться наверх ↑</a></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <dialog class="reference-dialog" id="reference-dialog" aria-labelledby="reference-title"><div class="dialog-heading"><h2 id="reference-title">Исходный план</h2><button class="icon-button" type="button" id="close-reference" aria-label="Закрыть изображение"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div><img id="reference-image" alt="" width="2400" height="1620"><p id="reference-caption"></p></dialog>
+  <dialog class="layout-gallery-dialog" id="layout-gallery-dialog" aria-labelledby="layout-gallery-title"><div class="dialog-heading"><div><h2 id="layout-gallery-title">Комната с четырёх сторон</h2><p id="layout-gallery-meta"></p></div><button class="icon-button" type="button" id="close-layout-gallery" aria-label="Закрыть галерею"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div><p id="layout-gallery-status" role="status"></p><div class="layout-gallery-main" id="layout-gallery-main" role="img"></div><div class="layout-gallery-thumbs" id="layout-gallery-thumbs"></div><div class="gallery-controls"><button class="text-button" type="button" id="gallery-prev">← Предыдущий вид</button><span id="gallery-counter"></span><button class="text-button" type="button" id="gallery-next">Следующий вид →</button></div></dialog>
+  <div class="print-notes" id="print-notes"></div>
+</body>
+</html>
