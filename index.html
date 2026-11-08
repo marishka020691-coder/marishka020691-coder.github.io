@@ -8,11 +8,11 @@
   <meta name="description" content="Личный проект спальни: четыре планировки, интерактивная объёмная модель, вид сверху, материалы и подборка мебели в Великобритании.">
   <title>Спокойствие. — ваша спальня, по-новому</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=serenity-20261108">
+  <link rel="stylesheet" href="style.css?v=view-settings-20261108">
   <script defer src="assets/vendor/three.min.js"></script>
   <script defer src="mirrors.js?v=door-mirrors-1"></script>
   <script defer src="scene.js?v=door-mirrors-1"></script>
-  <script defer src="i18n.js?v=serenity-20261108"></script>
+  <script defer src="i18n.js?v=view-settings-20261108"></script>
   <script defer src="catalog.js?v=gallery-6"></script>
   <script defer src="palettes.js?v=gallery-6"></script>
   <script defer src="plan.js?v=serenity-20261108"></script>
@@ -90,6 +90,12 @@
             <div class="plan-legend"><span><i class="legend-bed"></i>Кровать</span><span><i class="legend-storage"></i>Хранение</span><span><i class="legend-window"></i>Окна</span><span><i class="legend-door"></i>Дверь</span></div>
             <p class="selection-summary" id="selection-summary"></p>
           </div>
+          <div class="viewer-settings" role="group" aria-label="Настройки просмотра">
+            <fieldset class="door-fieldset"><legend>Входная дверь</legend><label class="door-checkbox"><input type="checkbox" id="door-visible" name="door-visible" checked><span>Показывать дверь</span></label><button class="door-toggle" id="door-toggle" type="button" aria-pressed="false">Открыть дверь</button><p id="door-status" role="status">Дверь закрыта</p></fieldset>
+            <fieldset class="fixture-fieldset"><legend>Потолочный свет</legend><div class="fixture-switch" role="group" aria-label="Направление потолочного плафона"><button type="button" data-fixture="up" aria-pressed="true">Плафон вверх</button><button type="button" data-fixture="down" aria-pressed="false">Плафон вниз</button></div></fieldset>
+            <fieldset class="light-fieldset"><legend>Время для уюта</legend><div class="light-switch" role="group" aria-label="Освещение модели"><button type="button" data-light="day" aria-pressed="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg>День</button><button type="button" data-light="evening" aria-pressed="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg>Вечер</button></div></fieldset>
+            <fieldset class="exposure-fieldset"><legend>Куда выходят окна?</legend><div class="exposure-switch" role="group" aria-label="Направление окон"><button type="button" data-exposure="unknown" aria-pressed="true">Неизвестно</button><button type="button" data-exposure="north" aria-pressed="false">Север</button><button type="button" data-exposure="south" aria-pressed="false">Юг</button></div><p id="exposure-hint"></p><small>Условное сравнение света, без расчёта положения солнца. На реальный свет влияют сезон, время суток и соседние здания.</small></fieldset>
+          </div>
           <aside class="room-controls" aria-label="Настройки планировки">
             <fieldset class="layout-fieldset"><legend>Как вам удобнее?</legend><p class="control-description">Четыре идеи вокруг вашей кровати.</p>
               <label class="layout-option"><input type="radio" name="layout" value="calm" checked><span class="layout-number">A</span><span><strong>Тихий отель</strong><small>Симметрия и свободное пространство</small></span><span class="option-check" aria-hidden="true">✓</span></label>
@@ -98,11 +104,6 @@
               <label class="layout-option"><input type="radio" name="layout" value="vanity"><span class="layout-number">D</span><span><strong>Личный ритуал</strong><small>Туалетный столик и мягкая банкетка</small></span><span class="option-check" aria-hidden="true">✓</span></label>
             </fieldset>
             <div class="layout-comment"><span class="small-label" id="layout-kicker">СЦЕНАРИЙ A</span><p id="layout-description">Кровать по центру короткой стены. Шкаф-купе 100 × 55 см в нижней нише. Ковёр сдвинут к изголовью; у изножья остаётся деревянный пол.</p><button class="text-button layout-reference" id="layout-reference" type="button">Посмотреть с четырёх сторон <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></button></div>
-            <fieldset class="door-fieldset"><legend>Входная дверь</legend><label class="door-checkbox"><input type="checkbox" id="door-visible" name="door-visible" checked><span>Показывать дверь</span></label><button class="door-toggle" id="door-toggle" type="button" aria-pressed="false">Открыть дверь</button><p id="door-status" role="status">Дверь закрыта</p></fieldset>
-            <fieldset class="fixture-fieldset"><legend>Потолочный свет</legend><div class="fixture-switch" role="group" aria-label="Направление потолочного плафона"><button type="button" data-fixture="up" aria-pressed="true">Плафон вверх</button><button type="button" data-fixture="down" aria-pressed="false">Плафон вниз</button></div></fieldset>
-            <fieldset class="light-fieldset"><legend>Время для уюта</legend><div class="light-switch" role="group" aria-label="Освещение модели"><button type="button" data-light="day" aria-pressed="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg>День</button><button type="button" data-light="evening" aria-pressed="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg>Вечер</button></div></fieldset>
-            <fieldset class="exposure-fieldset"><legend>Куда выходят окна?</legend><div class="exposure-switch" role="group" aria-label="Направление окон"><button type="button" data-exposure="unknown" aria-pressed="true">Неизвестно</button><button type="button" data-exposure="north" aria-pressed="false">Север</button><button type="button" data-exposure="south" aria-pressed="false">Юг</button></div><p id="exposure-hint"></p><small>Условное сравнение света, без расчёта положения солнца. На реальный свет влияют сезон, время суток и соседние здания.</small></fieldset>
-
           </aside>
         </div>
         <div class="model-footer"><p class="model-note"><span>ЭСКИЗ, НЕ РАБОЧИЙ ЧЕРТЁЖ</span> Форма и окна перенесены с вашего плана. Матрас в модели условно 160 × 200 см, изголовье — 270 см: точные размеры кровати ещё нужны. Дуга двери показывает только один из возможных вариантов открывания.</p><button class="text-button" type="button" id="download-plan">Скачать вид сверху <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-down"/></svg></button></div>
