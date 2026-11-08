@@ -3,20 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noimageindex">
   <meta name="theme-color" content="#f7f5ef">
   <meta name="description" content="Личный проект спальни: четыре планировки, интерактивная объёмная модель, вид сверху, материалы и подборка мебели в Великобритании.">
-  <title>Тише. — ваша спальня, по-новому</title>
+  <title>Спокойствие. — ваша спальня, по-новому</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=audit-20261108">
+  <link rel="stylesheet" href="style.css?v=serenity-20261108">
   <script defer src="assets/vendor/three.min.js"></script>
   <script defer src="mirrors.js?v=door-mirrors-1"></script>
   <script defer src="scene.js?v=door-mirrors-1"></script>
-  <script defer src="i18n.js?v=audit-20261108"></script>
+  <script defer src="i18n.js?v=serenity-20261108"></script>
   <script defer src="catalog.js?v=gallery-6"></script>
   <script defer src="palettes.js?v=gallery-6"></script>
-  <script defer src="plan.js?v=gallery-6"></script>
+  <script defer src="plan.js?v=serenity-20261108"></script>
   <script defer src="gallery.js?v=audit-20261108"></script>
-  <script defer src="app.js?v=audit-20261108"></script>
+  <script defer src="app.js?v=serenity-20261108"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">К содержимому</a>
@@ -33,7 +34,7 @@
   </svg>
 
   <header class="site-header">
-    <a class="brand" href="#" aria-label="Тише — в начало"><span class="brand-mark" aria-hidden="true"></span>тише<span class="brand-dot">.</span></a>
+    <a class="brand" href="#" aria-label="Спокойствие — в начало"><span class="brand-mark" aria-hidden="true"></span>спокойствие<span class="brand-dot">.</span></a>
     <span class="header-caption">ЛИЧНЫЙ ИНТЕРЬЕРНЫЙ ПРОЕКТ</span>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Открыть меню"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-menu"/></svg></button>
     <nav class="site-nav" id="site-nav" aria-label="Основная навигация">
@@ -153,7 +154,7 @@
     <section class="section container finishing" id="details" aria-labelledby="details-title"><div><p class="eyebrow">05 / ПОСЛЕДНИЕ ШТРИХИ</p><h2 id="details-title">Хороший проект<br><em>начинается с деталей.</em></h2><p>Прежде чем выбирать окончательную расстановку, дополним то, чего пока нет в исходных материалах.</p><div class="project-checklist"><label><input type="checkbox" data-check="bed" name="check-bed">Точные размеры кровати и широкого изголовья</label><label><input type="checkbox" data-check="door" name="check-door">Направление открывания двери и высота подоконников</label><label><input type="checkbox" data-check="utilities" name="check-utilities">Радиаторы, розетки и выключатели</label><label><input type="checkbox" data-check="niche" name="check-niche">Ширина верха и нижнего выступа — контрольный обмер</label></div><details><summary>Что показывает модель?</summary><p>Интерактивная модель и план сверху показывают условную расстановку по предоставленной схеме. Это первая концепция, которую можно корректировать после уточнения размеров; не готовая строительная документация.</p></details></div><div class="notes-panel"><span class="handwritten">Оставим место для ваших идей.</span><label for="project-notes">Что хочется добавить или изменить?</label><textarea id="project-notes" name="project-notes" autocomplete="off" rows="5" placeholder="Например: хочу больше закрытого хранения и светлее стены…" maxlength="4000"></textarea><p class="save-status" id="save-status" role="status">Выбор и заметки сохраняются только в этом браузере.</p><button class="button button-dark" type="button" data-print>Сохранить проект в PDF <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-down"/></svg></button><p class="print-note">Откроется окно печати. В нём выберите «Сохранить как PDF».</p></div></section>
   </main>
 
-  <footer class="site-footer container"><a class="brand" href="#"><span class="brand-mark" aria-hidden="true"></span>тише<span class="brand-dot">.</span></a><p>Меньше суеты. Больше вашего.</p><a class="text-button" href="#">Вернуться наверх ↑</a></footer>
+  <footer class="site-footer container"><a class="brand" href="#"><span class="brand-mark" aria-hidden="true"></span>спокойствие<span class="brand-dot">.</span></a><p>Меньше суеты. Больше вашего.</p><a class="text-button" href="#">Вернуться наверх ↑</a></footer>
   <div class="toast" id="toast" role="status"></div>
   <dialog class="reference-dialog" id="reference-dialog" aria-labelledby="reference-title"><div class="dialog-heading"><h2 id="reference-title">Исходный план</h2><button class="icon-button" type="button" id="close-reference" aria-label="Закрыть изображение"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div><img id="reference-image" alt="" width="2400" height="1620"><p id="reference-caption"></p></dialog>
   <dialog class="layout-gallery-dialog" id="layout-gallery-dialog" aria-labelledby="layout-gallery-title"><div class="dialog-heading"><div><h2 id="layout-gallery-title">Комната с четырёх сторон</h2><p id="layout-gallery-meta"></p></div><button class="icon-button" type="button" id="close-layout-gallery" aria-label="Закрыть галерею"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-close"/></svg></button></div><p id="layout-gallery-status" role="status"></p><div class="layout-gallery-main" id="layout-gallery-main" role="img"></div><div class="layout-gallery-thumbs" id="layout-gallery-thumbs"></div><div class="gallery-controls"><button class="text-button" type="button" id="gallery-prev">← Предыдущий вид</button><span id="gallery-counter"></span><button class="text-button" type="button" id="gallery-next">Следующий вид →</button></div></dialog>

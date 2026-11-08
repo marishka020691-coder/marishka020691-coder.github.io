@@ -268,7 +268,7 @@
     const header = state.language === 'en' ? ['Product', 'Retailer', 'Size', 'Quantity', 'Unit price GBP', 'Line total GBP', 'Link', 'Notes'] : ['Товар', 'Магазин', 'Размер', 'Количество', 'Цена за штуку GBP', 'Сумма GBP', 'Ссылка', 'Примечание'];
     const rows = [header, ...selected.map(p => [p.name, p.shop, local(p.size), p.quantity, p.price === null ? '' : (p.price / 100).toFixed(2), p.price === null ? '' : (p.price * p.quantity / 100).toFixed(2), p.url, local(p.note)]), [state.language === 'en' ? 'PRICED SUBTOTAL' : 'ПОДТВЕРЖДЁННАЯ СУММА', '', '', '', '', (selected.reduce((s, p) => s + (p.price ?? 0) * p.quantity, 0) / 100).toFixed(2), '', state.language === 'en' ? 'Checked 06.11.2026; delivery, assembly and other extras excluded' : 'Проверено 06.11.2026; доставка, сборка и другие дополнительные расходы не включены']];
     const csv = '\uFEFF' + rows.map(row => row.map(cell => `"${String(cell).replaceAll('"', '""')}"`).join(';')).join('\r\n');
-    downloadBlob(new Blob([csv], { type: 'text/csv;charset=utf-8' }), `tishe-shopping-list-${state.language}.csv`);
+    downloadBlob(new Blob([csv], { type: 'text/csv;charset=utf-8' }), `serenity-shopping-list-${state.language}.csv`);
     toast('Список покупок подготовлен для скачивания.');
   });
   $('#download-plan').addEventListener('click', async () => {
@@ -289,10 +289,10 @@
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
       const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
       if (!blob) throw new Error('PNG export failed');
-      downloadBlob(blob, `tishe-plan-${exportLetter}-${exportPalette}-${exportLanguage}.png`);
+      downloadBlob(blob, `serenity-plan-${exportLetter}-${exportPalette}-${exportLanguage}.png`);
       toast('Вид сверху подготовлен как PNG.');
     } catch {
-      downloadBlob(new Blob([exportSource], { type: 'image/svg+xml;charset=utf-8' }), `tishe-plan-${exportLetter}-${exportPalette}-${exportLanguage}.svg`);
+      downloadBlob(new Blob([exportSource], { type: 'image/svg+xml;charset=utf-8' }), `serenity-plan-${exportLetter}-${exportPalette}-${exportLanguage}.svg`);
       toast('План подготовлен в формате SVG.');
     } finally { URL.revokeObjectURL(url); button.disabled = false; }
   });

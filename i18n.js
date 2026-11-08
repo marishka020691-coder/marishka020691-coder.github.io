@@ -1,8 +1,8 @@
 /* Exact phrase translations. Text nodes preserve their markup and event listeners. */
 window.BedroomI18n = (() => {
   const phrases = new Map([
-    ['Тише. — ваша спальня, по-новому', 'Tishe. — your bedroom, reimagined'],
-    ['К содержимому', 'Skip to content'], ['тише', 'tishe'],
+    ['Спокойствие. — ваша спальня, по-новому', 'Serenity. — your bedroom, reimagined'],
+    ['К содержимому', 'Skip to content'], ['спокойствие', 'serenity'],
     ['ЛИЧНЫЙ ИНТЕРЬЕРНЫЙ ПРОЕКТ', 'YOUR PERSONAL INTERIOR PROJECT'],
     ['Идея', 'Concept'], ['Планировка', 'Layout'], ['Материалы', 'Materials'], ['Покупки', 'Shopping'],
     ['Сохранить PDF', 'Save PDF'], ['HOTEL AT HOME · ВЕЛИКОБРИТАНИЯ', 'HOTEL AT HOME · UNITED KINGDOM'],
@@ -69,7 +69,7 @@ window.BedroomI18n = (() => {
     ['Сохранить проект в PDF', 'Save project as PDF'], ['Откроется окно печати. В нём выберите «Сохранить как PDF».', 'The print dialog will open. Choose “Save as PDF”.'],
     ['Меньше суеты. Больше вашего.', 'Less rush. More you.'], ['Вернуться наверх ↑', 'Back to top ↑'], ['Исходный план', 'Original plan'],
     ['Личный проект спальни: четыре планировки, интерактивная объёмная модель, вид сверху, материалы и подборка мебели в Великобритании.', 'A personal bedroom project: four layouts, an interactive room model, floor plans, materials and UK shopping sources.'],
-    ['Тише — в начало', 'Tishe — back to top'], ['Открыть меню', 'Open menu'], ['Закрыть меню', 'Close menu'], ['Основная навигация', 'Main navigation'], ['Параметры комнаты', 'Room details'],
+    ['Спокойствие — в начало', 'Serenity — back to top'], ['Открыть меню', 'Open menu'], ['Закрыть меню', 'Close menu'], ['Основная навигация', 'Main navigation'], ['Параметры комнаты', 'Room details'],
     ['Рассмотреть фотографию вашей кровати', 'Enlarge your bed photograph'], ['Ваша серая кровать с подъёмным основанием и широким изголовьем', 'Your grey ottoman bed with its wide headboard'],
     ['Отображение комнаты', 'Room display'], ['Интерактивная объёмная модель спальни', 'Interactive bedroom model'], ['Масштаб объёмной модели', 'Model zoom'],
     ['Отдалить модель', 'Zoom out'], ['Текущий масштаб', 'Current zoom'], ['Приблизить модель', 'Zoom in'], ['Вернуть исходный ракурс', 'Reset camera'],
@@ -152,7 +152,7 @@ window.BedroomI18n = (() => {
     let result = phrases.get(trimmed);
     if (!result && /^СЦЕНАРИЙ [A-D]$/.test(trimmed)) result = trimmed.replace('СЦЕНАРИЙ', 'LAYOUT');
     if (!result && /^Вид сверху — /.test(trimmed)) result = 'Floor plan — ' + text(trimmed.slice(13));
-    if (!result && /^ТИШЕ\. \/ ВАРИАНТ /.test(trimmed)) result = trimmed.replace('ТИШЕ. / ВАРИАНТ', 'TISHE. / LAYOUT').replace(/ТИХИЙ ОТЕЛЬ|МЕСТО ДЛЯ СЕБЯ|МЕДЛЕННОЕ УТРО|ЛИЧНЫЙ РИТУАЛ/g, v => ({'ТИХИЙ ОТЕЛЬ':'QUIET HOTEL','МЕСТО ДЛЯ СЕБЯ':'A PLACE FOR YOURSELF','МЕДЛЕННОЕ УТРО':'SLOW MORNINGS','ЛИЧНЫЙ РИТУАЛ':'YOUR DAILY RITUAL'})[v]);
+    if (!result && /^СПОКОЙСТВИЕ\. \/ ВАРИАНТ /.test(trimmed)) result = trimmed.replace('СПОКОЙСТВИЕ. / ВАРИАНТ', 'SERENITY. / LAYOUT').replace(/ТИХИЙ ОТЕЛЬ|МЕСТО ДЛЯ СЕБЯ|МЕДЛЕННОЕ УТРО|ЛИЧНЫЙ РИТУАЛ/g, v => ({'ТИХИЙ ОТЕЛЬ':'QUIET HOTEL','МЕСТО ДЛЯ СЕБЯ':'A PLACE FOR YOURSELF','МЕДЛЕННОЕ УТРО':'SLOW MORNINGS','ЛИЧНЫЙ РИТУАЛ':'YOUR DAILY RITUAL'})[v]);
     if (!result && /^[≈\d–., ×]+ см$/.test(trimmed)) result = trimmed.replace(' см', ' cm');
     if (!result && trimmed === 'дверь 88 см') result = 'door 88 cm';
     if (!result && trimmed.startsWith('Нестандартная комната шириной около 312 см')) result = 'Irregular room, about 312 cm wide and 473 cm long. Two windows on the right; door on the left. Bed at the top wall; sliding wardrobe in the lower niche. Check all measurements against the actual room.';
