@@ -156,13 +156,15 @@
     const unavailable = !scene || mode === 'plan';
     $('#door-visible').checked = state.doorVisible;
     $('#door-visible').disabled = unavailable;
-    $('#door-toggle').disabled = unavailable || !state.doorVisible;
-    $('#door-toggle').setAttribute('aria-pressed', String(state.doorOpen));
-    $('#door-toggle').textContent = tr(state.doorOpen ? 'Закрыть дверь' : 'Открыть дверь');
+    $('#door-open').disabled = unavailable || !state.doorVisible;
+    $('#door-close').disabled = unavailable || !state.doorVisible;
+    $('#door-open').setAttribute('aria-pressed', String(state.doorOpen));
+    $('#door-close').setAttribute('aria-pressed', String(!state.doorOpen));
     $('#door-status').textContent = tr(!state.doorVisible ? 'Дверь скрыта' : state.doorOpen ? 'Дверь открыта внутрь' : 'Дверь закрыта');
   }
   $('#door-visible').addEventListener('change', event => { state.doorVisible = event.target.checked; scene?.setDoorVisible(state.doorVisible); renderDoorControls(); persist(); });
-  $('#door-toggle').addEventListener('click', () => scene?.setDoorOpen(!state.doorOpen));
+  $('#door-open').addEventListener('click', () => { if (!state.doorOpen) scene?.setDoorOpen(true); });
+  $('#door-close').addEventListener('click', () => { if (state.doorOpen) scene?.setDoorOpen(false); });
   $('#scene-host').addEventListener('room-door-change', () => {
     if (!scene) return;
     const door = scene.getDoorState(); state.doorVisible = door.visible; state.doorOpen = door.open;

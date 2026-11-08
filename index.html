@@ -8,16 +8,16 @@
   <meta name="description" content="Личный проект спальни: четыре планировки, интерактивная объёмная модель, вид сверху, материалы и подборка мебели в Великобритании.">
   <title>Спокойствие. — ваша спальня, по-новому</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=view-settings-20261108">
+  <link rel="stylesheet" href="style.css?v=door-actions-20261108">
   <script defer src="assets/vendor/three.min.js"></script>
   <script defer src="mirrors.js?v=door-mirrors-1"></script>
   <script defer src="scene.js?v=door-mirrors-1"></script>
-  <script defer src="i18n.js?v=view-settings-20261108"></script>
+  <script defer src="i18n.js?v=door-actions-20261108"></script>
   <script defer src="catalog.js?v=gallery-6"></script>
   <script defer src="palettes.js?v=gallery-6"></script>
   <script defer src="plan.js?v=serenity-20261108"></script>
   <script defer src="gallery.js?v=audit-20261108"></script>
-  <script defer src="app.js?v=serenity-20261108"></script>
+  <script defer src="app.js?v=door-actions-20261108"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">К содержимому</a>
@@ -91,7 +91,7 @@
             <p class="selection-summary" id="selection-summary"></p>
           </div>
           <div class="viewer-settings" role="group" aria-label="Настройки просмотра">
-            <fieldset class="door-fieldset"><legend>Входная дверь</legend><label class="door-checkbox"><input type="checkbox" id="door-visible" name="door-visible" checked><span>Показывать дверь</span></label><button class="door-toggle" id="door-toggle" type="button" aria-pressed="false">Открыть дверь</button><p id="door-status" role="status">Дверь закрыта</p></fieldset>
+            <fieldset class="door-fieldset"><legend>Входная дверь</legend><div class="door-actions" role="group" aria-label="Положение двери"><button id="door-open" type="button" aria-label="Открыть дверь" aria-pressed="false">Открыть</button><button id="door-close" type="button" aria-label="Закрыть дверь" aria-pressed="true">Закрыть</button></div><p id="door-status" role="status">Дверь закрыта</p><label class="door-checkbox"><input type="checkbox" id="door-visible" name="door-visible" checked><span>Показывать дверь</span></label></fieldset>
             <fieldset class="fixture-fieldset"><legend>Потолочный свет</legend><div class="fixture-switch" role="group" aria-label="Направление потолочного плафона"><button type="button" data-fixture="up" aria-pressed="true">Плафон вверх</button><button type="button" data-fixture="down" aria-pressed="false">Плафон вниз</button></div></fieldset>
             <fieldset class="light-fieldset"><legend>Время для уюта</legend><div class="light-switch" role="group" aria-label="Освещение модели"><button type="button" data-light="day" aria-pressed="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-sun"/></svg>День</button><button type="button" data-light="evening" aria-pressed="false"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-moon"/></svg>Вечер</button></div></fieldset>
             <fieldset class="exposure-fieldset"><legend>Куда выходят окна?</legend><div class="exposure-switch" role="group" aria-label="Направление окон"><button type="button" data-exposure="unknown" aria-pressed="true">Неизвестно</button><button type="button" data-exposure="north" aria-pressed="false">Север</button><button type="button" data-exposure="south" aria-pressed="false">Юг</button></div><p id="exposure-hint"></p><small>Условное сравнение света, без расчёта положения солнца. На реальный свет влияют сезон, время суток и соседние здания.</small></fieldset>

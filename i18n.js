@@ -134,7 +134,7 @@ window.BedroomI18n = (() => {
     ['← Предыдущий вид', '← Previous view'], ['Следующий вид →', 'Next view →']
   ].forEach(([ru,en]) => phrases.set(ru,en));
   [
-    ['Настройки просмотра','View settings'], ['Входная дверь','Entrance door'], ['Показывать дверь','Show door'], ['Открыть дверь','Open door'], ['Закрыть дверь','Close door'],
+    ['Настройки просмотра','View settings'], ['Положение двери','Door position'], ['Открыть','Open'], ['Закрыть','Close'], ['Входная дверь','Entrance door'], ['Показывать дверь','Show door'], ['Открыть дверь','Open door'], ['Закрыть дверь','Close door'],
     ['Дверь закрыта','Door closed'], ['Дверь открыта внутрь','Door open inward'], ['Дверь скрыта','Door hidden'],
     ['ВАША КОМНАТА / ИСХОДНЫЙ ПЛАН','YOUR ROOM / ORIGINAL FLOOR PLAN'], ['Размеры и форма помещения','Room dimensions and shape'],
     ['Рассмотреть исходный план комнаты','View the original room plan'], ['Ваш исходный план комнаты с размерами','Your original dimensioned room plan']
